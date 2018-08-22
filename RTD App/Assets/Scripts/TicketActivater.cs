@@ -11,7 +11,7 @@ public class TicketActivater : MonoBehaviour {
     private const string TICKET_ACTIVATED_MESSAGE = "Ticket activated at ";
 
 	void Start () {
-        DateTime dt1 = DateTime.Now.AddHours(-1);
+        DateTime dt1 = DateTime.Now.AddHours(-1).AddMinutes(UnityEngine.Random.Range(1, 50));
         txtTicketActivated.text = TICKET_ACTIVATED_MESSAGE + dt1.ToShortTimeString();
 	}
 }
