@@ -12,9 +12,6 @@ public class TicketActivater : MonoBehaviour {
 
 	void Start () {
         DateTime dt1 = DateTime.Now.AddHours(-1);
-        string[] hourSubstrings = dt1.ToString("g").Split(' ');
-        string hour = hourSubstrings[1];
-        string meridiem = hourSubstrings[2];
-        txtTicketActivated.text = TICKET_ACTIVATED_MESSAGE + hour + " " + meridiem;
+        txtTicketActivated.text = TICKET_ACTIVATED_MESSAGE + dt1.ToShortTimeString();
 	}
 }
